@@ -2,14 +2,21 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+	"strings"
+	"time"
 )
 
 func main() {
-	var length float64 = 1.2
-	var width int = 2
-	fmt.Println("면적은 ", int(length)*width)
-	fmt.Println("면적은 ", int(length)*width)
-	fmt.Println("길이 > 너비?", length > float64(width))
-	fmt.Println("원본", reflect.TypeOf(float64(width)))
+	var now time.Time = time.Now()
+	var year int = now.Year()
+	var month time.Time = time.Time(now.Month())
+	var day int = now.Day()
+	fmt.Println(year)
+	fmt.Println(month)
+	fmt.Println(day)
+
+	univ := "Go$ Inha$"
+	changer := strings.NewReplacer("$", "!")
+	changed := changer.Replace(univ)
+	fmt.Println(changed)
 }
